@@ -1,26 +1,66 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Counter from "./components/counter/Counter"
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div>
+            <Counter></Counter>
+        </div>
+    )
 }
+
+/*
+class LearningComponents extends Component {
+    render() {
+        return (
+            <div className="App">
+                My Hello World
+                <FirstComponent></FirstComponent>
+                <SecondComponent></SecondComponent>
+                <ThirdComponent/>
+                <FourthComponent/>
+            </div>
+        )
+    }
+}
+*/
+
+/*class SecondComponent extends Component{
+    render(){
+        return(
+            <div className="secondComponent">
+                SecondComponent
+            </div>
+        );
+    }
+}
+*/
+
+// class ThirdComponent extends Component{
+//     render(){
+//         return(
+//             <div className="thirdComponent">
+//                 ThirdComponent
+//             </div>
+//         );
+//     }
+// }
+/*
+function ThirdComponent(){
+ return (
+     <div className="thirdComponent">
+         Third Component
+     </div>
+ );
+}*/
+
+/*function FourthComponent() {
+    return (
+        <div className="fourthComponent">
+            Fourth Component
+        </div>
+    )
+}*/
 
 export default App;
