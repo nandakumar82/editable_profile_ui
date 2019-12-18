@@ -8,7 +8,7 @@ class GlobalProfileComponent extends Component {
         this.state = {
             profile: '',
             profilePicture: ''
-        }
+        };
         this.backToSearch = this.backToSearch.bind(this)
     }
 
@@ -26,7 +26,7 @@ class GlobalProfileComponent extends Component {
         })
     }
 
-    backToSearch(){
+    backToSearch() {
         this.props.history.push("/search/profile")
     }
 
@@ -34,67 +34,71 @@ class GlobalProfileComponent extends Component {
         return (
             <div>
                 <title>View Profile</title>
+                <div className='page-title'>View profile</div>
                 <div className="container">
                     <div>
-                        <h1>View profile</h1>
+
                         <fieldset>
                             <legend>
-                                <h3>Personal Details</h3>
+                                <h4>Personal Details</h4>
                             </legend>
-                            <div className="personal-details">
-                                <div>
-                                    <div><label>Display Name</label>
-                                        <div>{this.state.profile.displayName}</div>
+                            <div className="row">
+                                <div className="col-sm-6">
+                                    <div className='profile-pic'>
+                                        <div className='form-text'><img
+                                            src={`data:image/jpeg;base64,${this.state.profilePicture}`}/></div>
                                     </div>
-                                    <div><label>Profile Picture</label>
-                                        <div><img src={`data:image/jpeg;base64,${this.state.profilePicture}`}/></div>
+                                </div>
+                                <div className="col-sm-6">
+
+                                    <div className='form-group'><label>Display Name</label>
+                                        <div className='form-text'>{this.state.profile.displayName}</div>
                                     </div>
-                                    <div>
+
+                                    <div className='form-group'>
                                         <label>Birthday</label>
                                         <div>{moment(this.state.profile.birthday).format('YYYY-MM-DD')}</div>
                                     </div>
-                                    <div><label>Gender</label><span>{this.state.profile.gender}</span></div>
+                                    <div className='form-group'><label>Gender</label>
+                                        <div className='form-text'>{this.state.profile.gender}</div>
+                                    </div>
                                 </div>
-                                <div>
-                                    <div>
-                                        <label>Ethnicity</label>
-                                        <div className="gender">
-                                            <div>{this.state.profile.ethnicity}</div>
-                                        </div>
+                                <div className="col-sm-6 form-group">
+                                    <label>Ethnicity</label>
+                                    <div className="gender">
+                                        <div className='form-text'>{this.state.profile.ethnicity}</div>
                                     </div>
-                                    <div>
-                                        <label>Religion</label>
-                                        <div className="gender">
-                                            <div>{this.state.profile.religion}</div>
-                                        </div>
+                                </div>
+                                <div className="col-sm-6 form-group ">
+                                    <label>Religion</label>
+                                    <div className="gender">
+                                        <div className='form-text'>{this.state.profile.religion}</div>
                                     </div>
-                                    <div>
-                                        <label>Height</label>
-                                        <div className="gender">
-                                            <div>{this.state.profile.height}</div>
-                                        </div>
+                                </div>
+                                <div className="col-sm-6 form-group">
+                                    <label>Height</label>
+                                    <div className="gender">
+                                        <div>{this.state.profile.height}</div>
                                     </div>
-                                    <div>
-                                        <label>Figure</label>
-                                        <div className="gender">
-                                            <div>{this.state.profile.figure}</div>
+                                </div>
 
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <label>About Me</label>
-                                        <div className="gender">
-                                            <div>{this.state.profile.aboutMe}</div>
+                                <div className="col-sm-6 form-group">
+                                    <label>Figure</label>
+                                    <div className="gender">
+                                        <div className='form-text'>{this.state.profile.figure}</div>
 
-                                        </div>
                                     </div>
-                                    <div>
-                                        <label>Location</label>
-                                        <div className="gender">
-                                            <div>{this.state.profile.location}</div>
+                                </div>
+                                <div className="col-sm-6 form-group">
+                                    <label>About Me</label>
+                                    <div className="gender">
+                                        <div className='form-text'>{this.state.profile.aboutMe}</div>
 
-                                        </div>
                                     </div>
+                                </div>
+                                <div className="col-sm-6 form-group">
+                                    <label>Location</label>
+                                    <div className='form-text'>{this.state.profile.location}</div>
                                 </div>
                             </div>
                         </fieldset>
@@ -107,4 +111,4 @@ class GlobalProfileComponent extends Component {
     }
 }
 
-export default GlobalProfileComponent
+export default GlobalProfileComponent;
