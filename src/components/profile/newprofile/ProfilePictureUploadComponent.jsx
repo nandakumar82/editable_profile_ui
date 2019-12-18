@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import "./file.css"
 
 class ProfilePictureUploadComponent extends Component {
 
