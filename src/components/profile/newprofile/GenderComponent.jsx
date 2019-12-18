@@ -15,7 +15,7 @@ class GenderComponent extends Component {
         return (<div className='form-group'>
             <label>Gender <span className="required-field">*</span></label>
             <div>
-                <select name="gender" class="form-control" onChange={this.handleOnChange} value={this.props.state}>
+                <select name="gender" className="form-control" onChange={this.handleOnChange} value={this.props.state}>
                     <option value="">Select an option</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>

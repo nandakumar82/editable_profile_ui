@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import moment from 'moment'
+import HeaderComponent from "./HeaderComponent";
 
 class ListProfileComponent extends Component {
     constructor(props) {
@@ -24,7 +25,8 @@ class ListProfileComponent extends Component {
         console.log('render')
         return (
             <div>
-                <h1>List Profiles</h1>
+                <HeaderComponent/>
+                <div className='page-title'>List Profiles</div>
                 {this.state.message && <div class="alert alert-success">{this.state.message}</div>}
                 <div className="container">
                     <table className="table">

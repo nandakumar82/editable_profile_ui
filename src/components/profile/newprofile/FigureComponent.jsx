@@ -17,7 +17,7 @@ class FigureComponent extends Component {
         return (<div className='form-group'>
                 <label>Figure</label>
                 <div>
-                    <select name="Figure" onChange={this.handleOnChange} value={this.props.state} class="form-control">
+                    <select name="Figure" onChange={this.handleOnChange} value={this.props.state} className="form-control">
                         <option value="">Select an option</option>
                         <option value="Slim">Slim</option>
                         <option value="Normal">Normal</option>

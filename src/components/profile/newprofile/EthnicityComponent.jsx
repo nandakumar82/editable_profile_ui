@@ -17,7 +17,7 @@ class EthnicityComponent extends Component {
         return (<div>
             <label>Ethnicity</label>
             <div>
-                <select name="ethnicity" class="form-control" onChange={this.handleOnChange} value={this.props.state}>
+                <select name="ethnicity" className="form-control" onChange={this.handleOnChange} value={this.props.state}>
                     <option value="">Select an option</option>
                     <option value="White">White</option>
                     <option value="South Asian">South Asian</option>

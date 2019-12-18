@@ -15,7 +15,7 @@ class LocationComponent extends Component {
         return (<div className='form-group'>
             <label>Location <span className="required-field">*</span></label>
             <div>
-                <select name="location" class="form-control" onChange={this.handleOnChange} value={this.props.state}>
+                <select name="location" className="form-control" onChange={this.handleOnChange} value={this.props.state}>
                     <option value="">Select an option</option>
                     <option value="Aarhus">Aarhus</option>
                     <option value="Aberdeen">Female</option>

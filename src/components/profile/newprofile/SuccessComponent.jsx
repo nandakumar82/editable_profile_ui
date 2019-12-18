@@ -11,10 +11,9 @@ class SuccessComponent extends Component {
 
     render() {
         return (
-            <div>
-                <title>Profile Created Successfully</title>
+            <div className='container'>
                 <div>
-                    <h3>Your profile has been created successfully, please login to view or edit</h3>
+                    <h4>Your profile has been created successfully, please login to view or edit</h4>
                 </div>
             </div>
         )

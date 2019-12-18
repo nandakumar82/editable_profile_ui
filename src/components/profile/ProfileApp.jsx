@@ -12,14 +12,12 @@ import GlobalProfileComponent from "./GlobalProfileComponent";
 import NewProfileComponent from "./newprofile/NewProfileComponent";
 import SuccessComponent from "./newprofile/SuccessComponent";
 import EditProfileComponent from "./newprofile/EditProfileComponent";
-import HeaderComponent from "./HeaderComponent";
 
 class ProfileApp extends Component {
     render() {
         return (
             <div>
                 <Router>
-                    <HeaderComponent/>
                     <Switch>
                         <Route path="/" exact component={LoginComponent}/>
                         <Route path="/login" component={LoginComponent}/>

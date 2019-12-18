@@ -18,7 +18,7 @@ class MaritalStatusComponent extends Component {
             <label>Marital Status <span className="required-field">*</span></label>
             <div>
                 <select name="MaritalStatus" onChange={this.handleOnChange} value={this.props.state}
-                        class="form-control">
+                        className="form-control">
                     <option value="">Select an option</option>
                     <option value="Never Married">Never Married</option>
                     <option value="Divorced">Divorced</option>

@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import ProfileDataService from "../../api/profile/ProfileDataService";
 import moment from "moment";
+import HeaderComponent from "./HeaderComponent";
 
 class ProfileComponent extends Component {
     constructor(props) {
@@ -34,6 +35,7 @@ class ProfileComponent extends Component {
     render() {
         return (
             <div>
+                <HeaderComponent/>
                 <div className="container">
                     <div>
                         <h1>View your online profile</h1>

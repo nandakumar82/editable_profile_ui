@@ -7,6 +7,7 @@ import MaritalStatusComponent from "./MaritalStatusComponent"
 import ProfilePictureUploadComponent from "./ProfilePictureUploadComponent"
 import ProfileDataService from "../../../api/profile/ProfileDataService"
 import LocationComponent from "./LocationComponent";
+import HeaderComponent from "../HeaderComponent";
 
 
 class NewProfileComponent extends Component {
@@ -30,9 +31,9 @@ class NewProfileComponent extends Component {
                 "location": ""
             },
             isProfileCreated: false,
-            isProfileFresh: true,
             profileId: '',
-            profilePic: ''
+            profilePic: '',
+            fillMandatoryFields:''
         };
 
         this.getDisplayNameState = this.getDisplayNameState.bind(this);
@@ -182,6 +183,7 @@ class NewProfileComponent extends Component {
                 console.log(response)
             })
         } else {
+            this.setState({fillMandatoryFields:'Please enter the mandatory fields'})
             console.log("Fill in the mandatory details")
         }
 
@@ -189,6 +191,7 @@ class NewProfileComponent extends Component {
 
     render() {
         return (<div>
+                <HeaderComponent/>
                 <div className='page-title'>Create your online profile</div>
                 <div className="container">
                     <div className="container">
@@ -281,6 +284,7 @@ class NewProfileComponent extends Component {
                             <div>
                                 <button className="btn btn-primary" onClick={this.onSubmit}>Submit</button>
                             </div>
+                            <span className="required-field">{this.state.fillMandatoryFields}</span>
                         </div>
                     </div>
                 </div>

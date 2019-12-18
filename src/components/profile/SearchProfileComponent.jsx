@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import ProfileDataService from "../../api/profile/ProfileDataService.js";
+import HeaderComponent from "./HeaderComponent";
 
 class SearchProfileComponent extends Component {
 
@@ -53,13 +54,13 @@ class SearchProfileComponent extends Component {
     render() {
         return (
             <div>
+                <HeaderComponent/>
                 <div>
-                    <h1>Search Profile</h1>
+                    <div className='page-title'>Search Profile</div>
                     <div className="container">
-                        <hr/>
                         <div className="container">
                             <div className="form-group col-md-6">
-                                <label htmlFor="text">Display Name:</label>
+                                <label htmlFor="text">Display Name </label>
                                 <input type="text" className="form-control" name="displayName"
                                        placeholder="Enter the Display Name" onChange={this.handleChange}
                                        value={this.state.displayName}/>

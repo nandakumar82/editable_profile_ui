@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
+import HeaderComponent from "./HeaderComponent";
 
 class WelcomeComponent extends Component {
 
@@ -15,6 +16,7 @@ class WelcomeComponent extends Component {
     render() {
         return (
             <>
+                <HeaderComponent/>
                 <h1>Welcome!</h1>
                 <div className="container">
                     Welcome {this.props.match.params.name}.

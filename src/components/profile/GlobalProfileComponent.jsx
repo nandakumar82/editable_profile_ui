@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import ProfileDataService from "../../api/profile/ProfileDataService";
 import moment from "moment";
+import HeaderComponent from "./HeaderComponent";
 
 class GlobalProfileComponent extends Component {
     constructor(props) {
@@ -33,6 +34,7 @@ class GlobalProfileComponent extends Component {
     render() {
         return (
             <div>
+                <HeaderComponent/>
                 <title>View Profile</title>
                 <div className='page-title'>View profile</div>
                 <div className="container">
@@ -57,7 +59,7 @@ class GlobalProfileComponent extends Component {
 
                                     <div className='form-group'>
                                         <label>Birthday</label>
-                                        <div>{moment(this.state.profile.birthday).format('YYYY-MM-DD')}</div>
+                                        <div className='form-text'>{moment(this.state.profile.birthday).format('YYYY-MM-DD')}</div>
                                     </div>
                                     <div className='form-group'><label>Gender</label>
                                         <div className='form-text'>{this.state.profile.gender}</div>
@@ -78,7 +80,7 @@ class GlobalProfileComponent extends Component {
                                 <div className="col-sm-6 form-group">
                                     <label>Height</label>
                                     <div className="gender">
-                                        <div>{this.state.profile.height}</div>
+                                        <div className='form-text'>{this.state.profile.height}</div>
                                     </div>
                                 </div>
 

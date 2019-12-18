@@ -17,7 +17,7 @@ class ReligionComponent extends Component {
         return (<div>
             <label>Religion</label>
             <div>
-                <select name="Religion" onChange={this.handleOnChange} value={this.props.state} class="form-control">
+                <select name="Religion" onChange={this.handleOnChange} value={this.props.state} className="form-control">
                     <option value="">Select an option</option>
                     <option value="Agnostic">Agnostic</option>
                     <option value="Atheist">Atheist</option>

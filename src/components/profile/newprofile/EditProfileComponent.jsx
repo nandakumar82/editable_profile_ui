@@ -8,6 +8,7 @@ import ProfilePictureUploadComponent from "./ProfilePictureUploadComponent"
 import ProfileDataService from "../../../api/profile/ProfileDataService"
 import moment from "moment";
 import LocationComponent from "./LocationComponent";
+import HeaderComponent from "../HeaderComponent";
 
 
 class EditProfileComponent extends Component {
@@ -224,6 +225,7 @@ class EditProfileComponent extends Component {
 
     render() {
         return (<div>
+                <HeaderComponent/>
                 <div className='page-title'>Edit your online profile</div>
                 <div className="container">
                     <div>
@@ -266,7 +268,7 @@ class EditProfileComponent extends Component {
                                            placeholder="Enter Real Name"
                                            maxLength={256}/>
 
-                                    <div>{this.state.profilePicSizeExceeded}</div>
+                                    <div className="required-field">{this.state.profilePicSizeExceeded}</div>
                                 </div>
                                 <div className="col-sm-6">
                                     <ProfilePictureUploadComponent
