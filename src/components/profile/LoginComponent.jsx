@@ -32,7 +32,6 @@ class LoginComponent extends Component {
         AuthenticationService
             .executeBasicAuthenticationService(this.state.username, this.state.password)
             .then((response) => {
-                let profile = response.data;
                 AuthenticationService.registerSuccessfulLogin(this.state.username, this.state.password);
                 this.setState({profile: response.data});
                 // console.log(this.state)
