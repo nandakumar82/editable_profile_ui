@@ -47,22 +47,29 @@ class LoginComponent extends Component {
     render() {
         return (
             <div>
-                <h1>Login</h1>
                 <div className="container">
-                    <div className="container">
-                        <div className="form-group col-md-3">
+                    <div className="login-container">
+                        <h3>Sign In</h3>
+                        <div className="form-group">
                             {this.state.hasLoginFailed &&
                             <div className="alert alert-warning">Invalid Credentials</div>}
                             {this.state.showSuccessMessage && <div>Login Successful</div>}
-                            User Name: <input type="text" name="username" value={this.state.username}
-                                              onChange={this.handleChange} class="form-control"/>
-                            Password: <input type="password" name="password" value={this.state.password}
+                            <div>
+                                <label>User Name:</label>
+                                <input type="text" name="username" value={this.state.username}
+                                       onChange={this.handleChange} class="form-control"/>
+                            </div>
+                            <div>
+                                <label>Password:</label>
+                            <input type="password" name="password" value={this.state.password}
                                              onChange={this.handleChange} class="form-control"/>
+                            </div>
+                        </div>
+                        <div>
+                            <button type="button" className="btn btn-primary btn-block" onClick={this.loginClicked}>Login</button>
                         </div>
                     </div>
-                    <div className="btn-container">
-                        <button type="button" className="btn btn-primary" onClick={this.loginClicked}>Login</button>
-                    </div>
+
                 </div>
 
             </div>
