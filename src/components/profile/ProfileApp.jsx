@@ -13,29 +13,27 @@ import NewProfileComponent from "./newprofile/NewProfileComponent";
 import SuccessComponent from "./newprofile/SuccessComponent";
 import EditProfileComponent from "./newprofile/EditProfileComponent";
 import HeaderComponent from "./HeaderComponent";
-import FooterComponent from "./FooterComponent";
 
 class ProfileApp extends Component {
     render() {
         return (
             <div>
                 <Router>
-                        <HeaderComponent/>
-                        <Switch>
-                            <Route path="/" exact component={LoginComponent}/>
-                            <Route path="/login" component={LoginComponent}/>
-                            <Route path="/create/profile/" component={NewProfileComponent}/>
-                            <Route path="/create/success" component={SuccessComponent}/>
-                            <AuthenticatedRoute path="/welcome/:name" component={WelcomeComponent}/>
-                            <AuthenticatedRoute path="/myprofile/:id" component={ProfileComponent}/>
-                            <AuthenticatedRoute path="/edit/:id" component={EditProfileComponent}/>
-                            <Route path="/search/profile" component={SearchProfileComponent}/>
-                            <Route path="/viewprofiles" component={ListProfileComponent}/>
-                            <Route path="/viewprofile/:profileId" component={GlobalProfileComponent}/>
-                            <AuthenticatedRoute path="/logout" component={LogoutComponent}/>
-                            <Route component={ErrorComponent}/>
-                        </Switch>
-                        {/*<FooterComponent/>*/}
+                    <HeaderComponent/>
+                    <Switch>
+                        <Route path="/" exact component={LoginComponent}/>
+                        <Route path="/login" component={LoginComponent}/>
+                        <Route path="/create/profile/" component={NewProfileComponent}/>
+                        <Route path="/create/success" component={SuccessComponent}/>
+                        <AuthenticatedRoute path="/welcome/:name" component={WelcomeComponent}/>
+                        <AuthenticatedRoute path="/myprofile/:id" component={ProfileComponent}/>
+                        <AuthenticatedRoute path="/edit/:id" component={EditProfileComponent}/>
+                        <Route path="/search/profile" component={SearchProfileComponent}/>
+                        <Route path="/viewprofiles" component={ListProfileComponent}/>
+                        <Route path="/viewprofile/:profileId" component={GlobalProfileComponent}/>
+                        <AuthenticatedRoute path="/logout" component={LogoutComponent}/>
+                        <Route component={ErrorComponent}/>
+                    </Switch>
                 </Router>
             </div>
         )
