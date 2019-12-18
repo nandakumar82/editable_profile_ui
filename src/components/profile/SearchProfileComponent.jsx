@@ -69,8 +69,8 @@ class SearchProfileComponent extends Component {
                         <button type="button" className="btn btn-primary" onClick={this.searchClicked}
                                 style={{margin: '5px 30px'}}>Search
                         </button>
-                        <div>{this.state.dataNotFound}</div>
-                        <div>{this.state.pleaseEnterDisplayName}</div>
+                        <div className="required-field">{this.state.dataNotFound}</div>
+                        <div className="required-field">{this.state.pleaseEnterDisplayName}</div>
                     </div>
                 </div>
             </div>
