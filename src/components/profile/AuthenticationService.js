@@ -1,8 +1,8 @@
 import axios from 'axios'
 import {API_URL} from '../../Constants'
 
-export const USER_NAME_SESSION_ATTRIBUTE_NAME = 'authenticatedUser'
-export const USER_PROFILE = 'user_profile'
+export const USER_NAME_SESSION_ATTRIBUTE_NAME = 'authenticatedUser';
+export const USER_PROFILE = 'user_profile';
 
 class AuthenticationService {
 
@@ -10,54 +10,32 @@ class AuthenticationService {
         return axios.post(`${API_URL}/view/myprofile`, {displayName: username, passPhrase: password})
     }
 
-    executeJwtAuthenticationService(username, password) {
-        return axios.post(`${API_URL}/authenticate`, {
-            username,
-            password
-        })
-    }
-
     createBasicAuthToken(username, password) {
         return 'Basic ' + window.btoa(username + ":" + password)
     }
 
-    registerSuccessfulLogin(username, password, profile) {
-        //let basicAuthHeader = 'Basic ' +  window.btoa(username + ":" + password)
-        //console.log('registerSuccessfulLogin')
-        sessionStorage.setItem(USER_NAME_SESSION_ATTRIBUTE_NAME, username)
-        // sessionStorage.setItem(USER_PROFILE, profile)
-        // console.log("From session storage"+sessionStorage.getItem(USER_PROFILE).id)
+    registerSuccessfulLogin(username, password) {
+        sessionStorage.setItem(USER_NAME_SESSION_ATTRIBUTE_NAME, username);
         this.setupAxiosInterceptors(this.createBasicAuthToken(username, password))
     }
-
-    registerSuccessfulLoginForJwt(username, token) {
-        sessionStorage.setItem(USER_NAME_SESSION_ATTRIBUTE_NAME, username)
-        this.setupAxiosInterceptors(this.createJWTToken(token))
-    }
-
-    createJWTToken(token) {
-        return 'Bearer ' + token
-    }
-
 
     logout() {
         sessionStorage.removeItem(USER_NAME_SESSION_ATTRIBUTE_NAME);
     }
 
     isUserLoggedIn() {
-        let user = sessionStorage.getItem(USER_NAME_SESSION_ATTRIBUTE_NAME)
-        if (user === null) return false
+        let user = sessionStorage.getItem(USER_NAME_SESSION_ATTRIBUTE_NAME);
+        if (user === null) return false;
         return true
     }
 
     getLoggedInUserName() {
-        let user = sessionStorage.getItem(USER_NAME_SESSION_ATTRIBUTE_NAME)
-        if (user === null) return ''
+        let user = sessionStorage.getItem(USER_NAME_SESSION_ATTRIBUTE_NAME);
+        if (user === null) return '';
         return user
     }
 
     setupAxiosInterceptors(token) {
-
         axios.interceptors.request.use(
             (config) => {
                 if (this.isUserLoggedIn()) {
