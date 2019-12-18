@@ -46,7 +46,7 @@ class GlobalProfileComponent extends Component {
                                 <div className="col-sm-6">
                                     <div className='profile-pic'>
                                         <div className='form-text'><img
-                                            src={`data:image/jpeg;base64,${this.state.profilePicture}`}/></div>
+                                            src={`data:image/jpeg;base64,${this.state.profilePicture}`} alt="Profile pic unavailable"/></div>
                                     </div>
                                 </div>
                                 <div className="col-sm-6">
