@@ -33,15 +33,13 @@ class LoginComponent extends Component {
             .executeBasicAuthenticationService(this.state.username, this.state.password)
             .then((response) => {
                 let profile = response.data;
-                AuthenticationService.registerSuccessfulLogin(this.state.username, this.state.password, profile);
-
+                AuthenticationService.registerSuccessfulLogin(this.state.username, this.state.password);
                 this.setState({profile: response.data});
                 // console.log(this.state)
                 this.props.history.push(`/welcome/${this.state.username}`, [this.state])
             }).catch((response) => {
             this.setState({showSuccessMessage: false});
             this.setState({hasLoginFailed: true});
-            // this.setState({errorMessage:response.response.data.model.message})
             console.log(this.state)
         })
     }
@@ -51,17 +49,24 @@ class LoginComponent extends Component {
             <div>
                 <h1>Login</h1>
                 <div className="container">
-                    {/*<ShowInvalidCredentials hasLoginFailed={this.state.hasLoginFailed}/>*/}
-                    {this.state.hasLoginFailed && <div className="alert alert-warning">Invalid Credentials</div>}
-                    {this.state.showSuccessMessage && <div>Login Sucessful</div>}
-                    {/*<ShowLoginSuccessMessage showSuccessMessage={this.state.showSuccessMessage}/>*/}
-                    User Name: <input type="text" name="username" value={this.state.username}
-                                      onChange={this.handleChange}/>
-                    Password: <input type="password" name="password" value={this.state.password}
-                                     onChange={this.handleChange}/>
-                    <button className="btn btn-success" onClick={this.loginClicked}>Login</button>
+                    <div className="container">
+                        <div className="form-group col-md-3">
+                            {this.state.hasLoginFailed &&
+                            <div className="alert alert-warning">Invalid Credentials</div>}
+                            {this.state.showSuccessMessage && <div>Login Successful</div>}
+                            User Name: <input type="text" name="username" value={this.state.username}
+                                              onChange={this.handleChange} class="form-control"/>
+                            Password: <input type="password" name="password" value={this.state.password}
+                                             onChange={this.handleChange} class="form-control"/>
+                        </div>
+                    </div>
+                    <div className="btn-container">
+                        <button type="button" className="btn btn-primary" onClick={this.loginClicked}>Login</button>
+                    </div>
                 </div>
+
             </div>
+
         )
     }
 }
