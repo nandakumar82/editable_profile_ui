@@ -7,7 +7,10 @@ import './bootstrap.css';
 function App() {
     return (
         <div>
-            <ProfileApp/>
+            <div className="wrapper">
+                <ProfileApp/>
+                <div className="push"></div>
+            </div>
         </div>
     )
 }
