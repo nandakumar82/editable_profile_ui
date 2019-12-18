@@ -56,12 +56,12 @@ class LoginComponent extends Component {
                             <div>
                                 <label>User Name:</label>
                                 <input type="text" name="username" value={this.state.username}
-                                       onChange={this.handleChange} class="form-control"/>
+                                       onChange={this.handleChange} className="form-control"/>
                             </div>
                             <div>
                                 <label>Password:</label>
                             <input type="password" name="password" value={this.state.password}
-                                             onChange={this.handleChange} class="form-control"/>
+                                             onChange={this.handleChange} className="form-control"/>
                             </div>
                         </div>
                         <div>
