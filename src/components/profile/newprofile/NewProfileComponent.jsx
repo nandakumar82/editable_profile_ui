@@ -170,6 +170,8 @@ class NewProfileComponent extends Component {
 
 
     onSubmit() {
+        this.setState({error:''})
+        this.setState({fillMandatoryFields:''})
         console.log(this.state.profile);
         let profile = this.state.profile;
         if (profile.displayName !== '' && profile.realName !== '' && profile.birthday !== null && profile.gender !== '' && profile.maritalStatus !== '' && profile.location !== '') {
@@ -180,7 +182,8 @@ class NewProfileComponent extends Component {
                     this.props.history.push("/create/success")
                 }
             ).catch((response) => {
-                console.log(response)
+                this.setState({error:response.response.data.message})
+                console.log(response.response.data.message)
             })
         } else {
             this.setState({fillMandatoryFields:'Please enter the mandatory fields'})
@@ -285,6 +288,7 @@ class NewProfileComponent extends Component {
                                 <button className="btn btn-primary" onClick={this.onSubmit}>Submit</button>
                             </div>
                             <span className="required-field">{this.state.fillMandatoryFields}</span>
+                            <span className="required-field">{this.state.error}</span>
                         </div>
                     </div>
                 </div>
